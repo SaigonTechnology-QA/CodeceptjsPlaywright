@@ -9,17 +9,17 @@ on:
 #    branches: [ master ]
 
 jobs:
-  run-api-test:
+  run-web-test:
     runs-on: ubuntu-latest
     container:
-      image: cimg/node:16.10
+      image: cimg/node:18.16.0-browsers
       options: --user root
     steps:
       - name: Checkout repo content
-        uses: actions/checkout@v3   # Checkout the repository content to github runner
+        uses: actions/checkout@v3
 
-      - name: Execute the test    # Execute the test
+      - name: Execute the test
         run: |
           cd $GITHUB_WORKSPACE
-          npm install
-          npm run web
+          sudo npm install
+          sudo npm run web

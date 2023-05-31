@@ -6,7 +6,7 @@ exports.config = {
   helpers: {
     Playwright: {
       url: 'https://opensource-demo.orangehrmlive.com',
-      show: true,
+      show: false,
       browser: 'chromium'
     },
     Web: {
@@ -51,6 +51,14 @@ exports.config = {
       enabled: false,
       require: '@testomatio/reporter/lib/adapter/codecept',
       apiKey: process.env.TESTOMATIO,
+    },
+    reportportal: {
+      enabled: false,
+      require: '@reportportal/agent-js-codecept',
+      token: process.env.Reportportal_Token,
+      endpoint: 'http://localhost:8080/api/v1',
+      launchName: 'local launch',
+      projectName: 'superadmin_personal'
     }
   },
   stepTimeout: 0,

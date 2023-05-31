@@ -4,13 +4,14 @@
   "description": "3. Init Node project npm init -y",
   "main": "index.js",
   "scripts": {
-    "web": "env-cmd -f env/orangehrm/.env npx codeceptjs run --grep @web --config config/orangehrm/web/codecept.conf.js --steps --debug"
+    "web": "env-cmd -f env/orangehrm/.env npx codeceptjs run --grep @web -c config/orangehrm/web/codecept.conf.js --steps --debug --verbose"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^8.0.2",
+    "@reportportal/agent-js-codecept": "^0.2.4",
     "@testomatio/reporter": "^0.7.6",
     "assert": "^2.0.0",
     "chai": "^4.3.7",
